@@ -10,23 +10,23 @@ class UserBloc extends ChangeNotifier {
   bool isLoggedIn;
 
   init() async {
-    await refreshAllStates();
+    await _refreshAllStates();
   }
 
-  refreshAllStates() async {
+  _refreshAllStates() async {
     isLoggedIn = await userRepo.isLoggedIn();
     name = await userRepo.getName();
   }
 
   login() async {
     await userRepo.login("John doe");
-    await refreshAllStates();
+    await _refreshAllStates();
     notifyListeners();
   }
 
   logout() async {
     await userRepo.logout();
-    await refreshAllStates();
+    await _refreshAllStates();
     notifyListeners();
   }
 }

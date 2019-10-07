@@ -7,7 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'home.screen.dart';
 import 'user.bloc.dart';
 
-Future main() async {
+main() async {
   final userBloc = UserBloc(
       userRepo: UserRepository(prefs: await SharedPreferences.getInstance()));
 
