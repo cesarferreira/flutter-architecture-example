@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_architecture/user.bloc.dart';
+import 'package:flutter_architecture/user.viewmodel.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final userBloc = Provider.of<UserBloc>(context);
+    final userBloc = Provider.of<UserViewModel>(context);
     return Scaffold(
       body: Container(
         color: userBloc.isLoggedIn ? Colors.greenAccent : Colors.yellow,

@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_architecture/user.bloc.dart';
 import 'package:flutter_architecture/user.repository.dart';
+import 'package:flutter_architecture/user.viewmodel.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'home.screen.dart';
-import 'user.bloc.dart';
+import 'user.viewmodel.dart';
 
 main() async {
-  final userBloc = UserBloc(
+  final userViewModel = UserViewModel(
       userRepo: UserRepository(prefs: await SharedPreferences.getInstance()));
 
-  await userBloc.init();
+  await userViewModel.init();
 
   runApp(MultiProvider(
       providers: [
-        ChangeNotifierProvider<UserBloc>.value(value: userBloc),
+        ChangeNotifierProvider<UserViewModel>.value(value: userViewModel),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
