@@ -1,4 +1,4 @@
-# Easy Flutter architecture using dependency injection (DI) + BLoC + State Manager + Repository Pattern
+# Flutter MVVM architecture using Dependency Injection (DI) + State Management + Repository Pattern
 
 <p align="center">
   <img src="extras/loggedinornot.png" width="100%" />
