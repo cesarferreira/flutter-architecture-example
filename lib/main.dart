@@ -8,6 +8,10 @@ import 'home.screen.dart';
 import 'user.viewmodel.dart';
 
 main() async {
+  
+  WidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences.setMockInitialValues({});
+
   final userViewModel = UserViewModel(
       userRepo: UserRepository(prefs: await SharedPreferences.getInstance()));
 
